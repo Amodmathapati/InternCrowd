@@ -1,0 +1,97 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+//function for finding the birthday...
+void find_birthday(map <string,string> &birthday_list){
+  string* name = new string();
+  cout<<"Enter the name please."<<endl;
+  cin>>*name;
+  cout<<*name<<":"<<birthday_list[*name]<<endl;
+  delete name;
+}
+
+//function for creating new birthday...
+
+void Create_new_row(map <string,string> &birthday_list){
+string* name = new string();
+string* birthdate = new string();
+
+cout<<"please enter the name."<<endl;
+cin>>*name;
+cout<<"please enter the birthdate."<<endl;
+cin>>*birthdate;
+birthday_list = {{*name,*birthdate}};
+cout<<"thankyou your name and birthday has been saved "<<endl<<"check below..."<<endl;
+delete name;
+delete birthdate;
+}
+
+//function for editing old birthday...
+
+void Edit_birthday(map<string, string> &birthday_list){
+
+   string* name = new string();
+   string* birthdate = new string();
+
+  cout<<"Enter the name please."<<endl;
+  cin>>*name;
+  cout<<*name<<":"<<birthday_list[*name]<<endl;
+  cout<<"Enter the date"<<endl;
+  cin>>*birthdate;
+  birthday_list[*name]=*birthdate;
+  cout<<"birthday has been successfully updated. Enter the name to verify..."<<endl;
+  delete name;
+  delete birthdate;
+
+}
+
+int main(){
+
+   	map<string, string> birthday_list;
+     
+     //previous DB:
+    birthday_list =  { {"ramesh", "21-02-2002"},
+         {"suresh", "21-02-2001"},
+         {"anmol", "21-05-1997"},
+         {"prachi", "12-12-1985"},
+         {"harish", "01-06-1997"},
+         {"aman", "21-05-2005"},
+         {"ritesh", "30-05-1997"},
+         {"ankita", "09-02-1985"},
+         {"khushi", "01-05-2003"}
+                      };
+
+    
+    int input=0;
+
+
+   cout<<"welcome user, press adjacent key to continue..."<<endl;
+   cout<<"1.Find birthday by name"<<endl<<"2.Create new birthday row."<<endl<<"3.Edit previous birthday."<<endl;
+    
+    cin>>input;
+    
+    if (input==1)
+    {
+      find_birthday(birthday_list);
+    }
+    
+    if(input==2){
+      Create_new_row(birthday_list);
+      find_birthday(birthday_list);
+    }
+    
+    if(input==3){
+      Edit_birthday(birthday_list);
+      find_birthday(birthday_list);
+    }
+    
+
+    
+
+
+
+
+
+return 0;
+}
