@@ -15,7 +15,6 @@ Make sure you have a C++ compiler installed on your system.
 ## ⚙️ Installation
 
 1. **Clone the repository:**
-   ```bash
   git clone https://github.com/Amodmathapati/InternCrowd.git
 
 2. **Navigate to the project directory:**
@@ -31,7 +30,6 @@ Make sure you have a C++ compiler installed on your system.
 
 1. **Find Birthday:**
    - Choose option `1` to search for a birthday by entering the name.
-     ```bash
     ./birthday_manager
 
 2. **Create New Entry:**
